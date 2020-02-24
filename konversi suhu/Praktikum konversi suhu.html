@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Suhu</title>
+    <!-- Load bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Load jquery and bootstrap js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bodper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        function cel() {
+            var x = celc.val1.value
+            y = (x / 100) * 80;
+            document.getElementById("hsl").innerHTML = "Hasilnya : " + y + " Reamur";
+            document.getElementById("persen").style.width = x + "%";
+        }
+        function kel() {
+
+            x = eval(kelv.val2.value);
+            k = x + 273;
+
+            document.getElementById("hslKel").innerHTML = "Hasilnya : " + k + " Kelvin";
+            document.getElementById("persenK").style.width = x + "%";
+        }
+
+        function far() {
+            x = eval(fare.val2.value);
+            k = (9 / 5 * x) + 32;
+            document.getElementById("hslFar").innerHTML = "Hasilnya : " + k + " Farenheit";
+            document.getElementById("persenF").style.width = x + "%";
+        }
+        function kel2() {
+
+            x = eval(kelv2.val2.value);
+            k = x - 273;
+
+            document.getElementById("hslCel").innerHTML = "Hasilnya : " + k + " celcius ";
+            document.getElementById("persenC").style.width = x + "%";
+        }
+
+
+    </script>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    [class*="col-"] {
+        padding: 15px;
+        float: left;
+        width: 100%;
+    }
+
+    .header {
+        background: url("logo_white.png") #5e0001 no-repeat center;
+        background-size: 100px 100px;
+        height: 200px;
+    }
+
+    @media only screen and (min-width: 600px) {
+
+        /*For tablets: */
+        .col-s-1 {
+            width: 8.33%;
+        }
+
+        .col-s-2 {
+            width: 16.66%;
+        }
+
+        .col-s-3 {
+            width: 25%;
+        }
+
+        .col-s-4 {
+            width: 33.33%;
+        }
+
+        .col-s-5 {
+            width: 41.66%;
+        }
+
+        .col-s-6 {
+            width: 50%;
+        }
+
+        .col-s-7 {
+            width: 58.33%;
+        }
+
+        .col-s-8 {
+            width: 66.66%;
+        }
+
+        .col-s-9 {
+            width: 75%;
+        }
+
+        .col-s-10 {
+            width: 83.33%;
+        }
+
+        .col-s-11 {
+            width: 91.66%;
+        }
+
+        .col-s-12 {
+            width: 100%;
+        }
+
+        .header {
+            background: url("logo_putih.png") #5e0001 no-repeat center;
+            height: 200px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        /*For dekstop: */
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        .header {
+            background: url("logo_putih.png") #5e0001 no-repeat center;
+            height: 200px;
+        }
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background: red;
+    }
+
+    .sidebar ul li {
+        float: left;
+        width: 100%;
+        border-bottom: 2px solid #5e0001;
+    }
+
+    .sidebar ul li a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 15px;
+        text-align: left;
+    }
+
+    .content {
+        text-align: justify;
+    }
+
+    .footer {
+        background: #5e0001;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 header">
+            </div>
+            <div class="col-sm-6">
+                <div class="card col-sm-12">
+                    <div class="card-header bg-warning text-white">
+                        <h3>Konversi Celcius to Reamur</h3>
+                    </div>
+                    <div class="card-body">
+                        <form name="celc">
+                            <div class="form-group">
+                                <label>Masukkan Derajat celcius</label>
+                                <input class="form-control" name="val1" placeholder="Celcius" />
+                            </div>
+                            <input type="button" name="ll" onclick="cel()" class="btn btn-danger btn"
+                                value="Konversikan"><br><br>
+                            <div id="hsl" class="alert alert-info">
+                                Hasilnya :
+                            </div>
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-info" id="persen" role="progressbar"
+                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card col-sm-12">
+                    <div class="card-header bg-danger text-white">
+                        <h3>Konversi Celcius to Kelvin</h3>
+                    </div>
+                    <div class="card-body">
+                        <form name="kelv">
+                            <div class="form-group">
+                                <label>Masukan Derajat Celcius</label>
+                                <input class="form-control" name="val2" placeholder="Celcius" />
+                            </div>
+                            <input type="button" onclick="kel()" class="btn btn-info btn" value="Konversikan"><br><br>
+                            <div id="hslKel" class="alert alert-info">
+                                Hasilnya :
+                            </div>
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-danger" id="persenK" role="progressbar"
+                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card col-sm-12">
+                    <div class="card-header bg-success text-white">
+                        <h3>Konversi Celcius to Farenheit</h3>
+                    </div>
+                    <div class="card-body">
+                        <form name="fare">
+                            <div class="form-group">
+                                <label>Masukan Derajat Celcius</label>
+                                <input class="form-control" name="val2" placeholder="Celcius" />
+                            </div>
+                            <input type="button" onclick="far()" class="btn btn-warning btn"
+                                value="Konversikan"><br><br>
+                            <div id="hslFar" class="alert alert-info">
+                                Hasilnya :
+                            </div>
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-warning" id="persenF" role="progressbar"
+                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card col-sm-12">
+                    <div class="card-header bg-danger text-white">
+                        <h3>Konversi kelvin ke celcius</h3>
+                    </div>
+                    <div class="card-body">
+                        <form name="kelv2">
+                            <div class="form-group">
+                                <label>Masukan Derajat Kelvin</label>
+                                <input class="form-control" name="val2" placeholder="Celcius" />
+                            </div>
+                            <input type="button" onclick="kel2()" class="btn btn-info btn" value="Konversikan"><br><br>
+                            <div id="hslCel" class="alert alert-info">
+                                Hasilnya :
+                            </div>
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-danger" id="persenC" role="progressbar"
+                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 footer">
+            Copyright by Rensi
+        </div>
+    </div>
+</body>
+
+</html>
